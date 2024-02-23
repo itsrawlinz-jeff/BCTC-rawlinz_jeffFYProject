@@ -30,4 +30,4 @@ webencodings==0.5.1
 zstandard==0.19.0
 
 #git push heroku main
-#docker build -t dockerfile
+#docker build -t dockerfile .

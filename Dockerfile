@@ -1,10 +1,13 @@
-FROM python:3.10-slim
+FROM python:3.10-slim AS build
 
-
-COPY requirements.txt /code/requirements.txt
 WORKDIR /code
-RUN pip install -r requirements.txt
-COPY . /code
-WORKDIR /code
+COPY requirements.txt .
+RUN pip wheel -r requirements.txt -w /wheels
 
-ENTRYPOINT [ "python", "app.py" ]
+FROM python:3.10-slim  
+WORKDIR /code
+COPY --from=build /wheels /wheels
+RUN pip install --no-index /wheels/*
+
+COPY . .
+ENTRYPOINT ["python", "app.py"]

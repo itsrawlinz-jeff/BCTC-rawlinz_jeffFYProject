@@ -37,7 +37,7 @@ Flask==1.0.3
 torchvision==0.17.0 
     --hash=sha256:5ccb288774fdfb07a7e7025ffec286971c06d8d7b4fb162525334616d7629ff9  
     
-torch==1.13.0 
+torch==2.2.0 
     --hash=sha256:28960811916d971e21ab8b9f3f3428421b83543f90e3c4026bc26cf6c1b2532c
 
 numpy==1.16.4 

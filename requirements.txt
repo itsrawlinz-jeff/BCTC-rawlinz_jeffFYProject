@@ -32,7 +32,6 @@
 #git push heroku main
 #docker build -t dockerfile .
 Flask==1.0.3
-https://download.pytorch.org/whl/cpu/torchvision-0.10.0%2Bcpu-cp36-cp36m-win_amd64.whl#sha256=0709a49425273c3d5c163539ea5b9b0d4d4bac5adc6727a0e5b11d8ba236ba62
-numpy==1.16.4
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121numpy==1.16.4
 Pillow==6.2.0
 gunicorn==19.9.0

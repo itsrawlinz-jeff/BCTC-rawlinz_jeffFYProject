@@ -31,20 +31,20 @@
 
 #git push heroku main
 #docker build -t dockerfile .
-Flask==1.0.3 \
+Flask==1.0.3 
     --hash=sha256:9654a696b184829780c095007bb14596f02853b3288e756ad766abc4ebf95f52
     
-torchvision==0.17.0 \
+torchvision==0.17.0 
     --hash=sha256:5ccb288774fdfb07a7e7025ffec286971c06d8d7b4fb162525334616d7629ff9  
     
-torch==1.7.1 \
+torch==1.7.1 
     --hash=sha256:28960811916d971e21ab8b9f3f3428421b83543f90e3c4026bc26cf6c1b2532c
 
-numpy==1.16.4 \
+numpy==1.16.4 
     --hash=sha256:7242be12a58fec245ee9734e625964b97cf7e3f2f7d016603f9e566cd09af477
     
-Pillow==6.2.0 \
+Pillow==6.2.0 
     --hash=sha256:3d91c5b45832dfa718bdb22d36f38b30a6fb37e023505b84051aca932b023a76
 
-gunicorn==19.9.0 \ 
+gunicorn==19.9.0  
    --hash=sha256:fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3

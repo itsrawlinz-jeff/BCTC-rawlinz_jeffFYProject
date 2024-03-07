@@ -118,22 +118,35 @@ input:focus ~ .border {
 }
 </style>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <h1>Login</h1>
-            <form action="/" method="post" >
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <span class="border"></span>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <span class="border"></span>
-                </div>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
+   <!-- Login Form Start -->
+<div class="container">
+    <div class="form-box">
+        <h1>Login</h1>
+        <form action="/" method="post">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="border"></span>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+                <span class="border"></span>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <br>
+        <div class="google-login">
+            <button class="google-btn" onclick="signInWithGoogle()">
+                <img src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg" alt="Google Logo" class="google-logo">
+                Sign in with Google
+            </button>
+        </div>
+        
+        
         </div>
     </div>
+</div>
+<!-- Login Form End -->
+
 
 
     <!-- <marquee behavior="" direction="righT">JEFFREY ROWLINGS : FINAL YEAR BCC TUMOUR CLASSIFICATION PROJECT</marquee> -->

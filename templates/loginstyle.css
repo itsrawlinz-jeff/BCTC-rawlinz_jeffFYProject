@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breast Cancer Classification - Login</title>
-    <link rel="stylesheet" href="loginstyle.css">
-</head>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -116,42 +106,3 @@ input:focus ~ .border {
     background-color: #c23838;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-</style>
-<body>
-    <div class="container">
-        <div class="form-box">
-            <h1>Login</h1>
-            <form action="/" method="post" >
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <span class="border"></span>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <span class="border"></span>
-                </div>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
-        </div>
-    </div>
-
-
-    <!-- <marquee behavior="" direction="righT">JEFFREY ROWLINGS : FINAL YEAR BCC TUMOUR CLASSIFICATION PROJECT</marquee> -->
-<script>
-    const inputs = document.querySelectorAll('input');
-
-inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-        input.parentNode.classList.add('focused');
-    });
-
-    input.addEventListener('blur', () => {
-        if (input.value === '') {
-            input.parentNode.classList.remove('focused');
-        }
-    });
-});
-</script>
-    <script src="script.js"></script>
-</body>
-</html>

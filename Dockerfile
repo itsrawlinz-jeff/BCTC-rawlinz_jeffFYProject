@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN pip3 install torch torchvision torchaudio
 RUN pip install -r requirements.txt
 COPY . . 
-
+p
 # Runtime stage 
 FROM python:3.11-slim
 WORKDIR /app

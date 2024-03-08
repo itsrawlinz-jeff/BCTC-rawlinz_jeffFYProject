@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breast Cancer Classification - Login</title>
     <link rel="stylesheet" href="loginstyle.css">
-</head>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -116,55 +114,96 @@ input:focus ~ .border {
     background-color: #c23838;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-</style>
+
+.google-login {
+    margin-top: 20px;
+}
+
+.google-btn {
+    background-color: #fff;
+    color: #444;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.google-btn:hover {
+    background-color: #f2f2f2;
+}
+
+.google-btn img {
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-btn span {
+    font-weight: bold;
+}
+    </style>
+</head>
 <body>
-   <!-- Login Form Start -->
-<div class="container">
-    <div class="form-box">
-        <h1>Login</h1>
-        <form action="/" method="post">
-            <div class="input-group">
-                <input type="email" name="email" placeholder="Email" required>
-                <span class="border"></span>
+    <div class="container">
+        <div class="form-box">
+            <h1>Login</h1>
+            <form action="/" method="post">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <span class="border"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <span class="border"></span>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <br>
+            <div class="google-login">
+                <button class="google-btn" onclick="signInWithGoogle()">
+                    <img src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg" alt="Google Logo" class="google-logo">
+                    Sign in with Google
+                </button>
             </div>
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Password" required>
-                <span class="border"></span>
-            </div>
-            <button type="submit" class="submit-btn">Login</button>
-        </form>
-        <br>
-        <div class="google-login">
-            <button class="google-btn" onclick="signInWithGoogle()">
-                <img src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg" alt="Google Logo" class="google-logo">
-                Sign in with Google
-            </button>
-        </div>
-        
-        
         </div>
     </div>
-</div>
-<!-- Login Form End -->
 
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
 
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDBpTlredH1Zq35LGZuiztCJ9z12JdQSAU",
+            authDomain: "bctc-rawlinz-jeffproject.firebaseapp.com",
+            projectId: "bctc-rawlinz-jeffproject",
+            storageBucket: "bctc-rawlinz-jeffproject.appspot.com",
+            messagingSenderId: "1053088381150",
+            appId: "1:1053088381150:web:1cbc40e99566fe93a7ea4f",
+        };
 
-    <!-- <marquee behavior="" direction="righT">JEFFREY ROWLINGS : FINAL YEAR BCC TUMOUR CLASSIFICATION PROJECT</marquee> -->
-<script>
-    const inputs = document.querySelectorAll('input');
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-        input.parentNode.classList.add('focused');
-    });
+        function signInWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
 
-    input.addEventListener('blur', () => {
-        if (input.value === '') {
-            input.parentNode.classList.remove('focused');
+            firebase.auth()
+                .signInWithPopup(provider)
+                .then((result) => {
+                    // User signed in successfully
+                    const user = result.user;
+                    console.log('User signed in:', user);
+                })
+                .catch((error) => {
+                    // Handle errors here
+                    console.error('Error signing in:', error);
+                });
         }
-    });
-});
-</script>
-    <script src="script.js"></script>
+    </script>
 </body>
 </html>
